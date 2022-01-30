@@ -1,6 +1,6 @@
-package a_3_defining_functions.a_3_6_clean_up_code__local_functions_and_extensions
+package main.kotlin.a_3_defining_functions.a_3_6_clean_up_code__local_functions_and_extensions
 
-import a_2_basics_kotlin.a_2_5_exeption_in_kotlin.catchException
+import main.kotlin.a_2_basics_kotlin.a_2_5_exeption_in_kotlin.catchException
 import java.lang.IllegalArgumentException
 
 fun a_3_6_Base() {
@@ -79,6 +79,6 @@ fun User.validateBeforeSave(){
     println("user saved - $this")
 }
 
-fun saveUserFinal(user:User){
+fun saveUserFinal(user: User){
     user.validateBeforeSave()
 }

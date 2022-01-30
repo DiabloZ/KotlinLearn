@@ -1,4 +1,4 @@
-package a_3_defining_functions.a_3_4_example.a_3_4_3_index_call
+package main.kotlin.a_3_defining_functions.a_3_4_example.a_3_4_3_index_call
 
 fun a_3_4_3_IndexesCall() {
     val map = mapOf(1 to "one",

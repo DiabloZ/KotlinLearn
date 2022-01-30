@@ -1,7 +1,8 @@
-package a_1_how_and_why
+package main.kotlin.a_1_how_and_why
 
 fun a_1_1_ElvisNull() {
-    val persons = listOf(Person("Alice"),
+    val persons = listOf(
+        Person("Alice"),
         Person("Bob", 29)
     )
 

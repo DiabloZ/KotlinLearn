@@ -1,4 +1,4 @@
-package a_2_basics_kotlin.a_2_4_while_for
+package main.kotlin.a_2_basics_kotlin.a_2_4_while_for
 
 fun a_2_4_2_SequenceIterations() {
     for (i in 1..100){

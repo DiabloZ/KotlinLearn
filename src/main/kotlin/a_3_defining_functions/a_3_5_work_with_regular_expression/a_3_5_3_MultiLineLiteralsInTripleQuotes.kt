@@ -1,4 +1,4 @@
-package a_3_defining_functions.a_3_5_work_with_regular_expression
+package main.kotlin.a_3_defining_functions.a_3_5_work_with_regular_expression
 
 fun a_3_5_3_MultiLineLiteralsInTripleQuotes() {
     val kotlinLogo = """| //

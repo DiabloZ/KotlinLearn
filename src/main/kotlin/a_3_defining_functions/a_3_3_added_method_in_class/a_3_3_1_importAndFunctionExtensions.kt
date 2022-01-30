@@ -1,6 +1,6 @@
-package a_3_defining_functions.a_3_3_added_method_in_class
+package main.kotlin.a_3_defining_functions.a_3_3_added_method_in_class
 
-import a_3_defining_functions.a_3_3_added_method_in_class.lastCharFun as lol
+import main.kotlin.a_3_defining_functions.a_3_3_added_method_in_class.lastCharFun as lol
 
 fun a_3_3_1_importAndFunctionExtensions() {
     val set = hashSetOf(1, 7, 53)

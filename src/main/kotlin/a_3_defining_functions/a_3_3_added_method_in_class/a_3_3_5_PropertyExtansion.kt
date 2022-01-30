@@ -1,4 +1,4 @@
-package a_3_defining_functions.a_3_3_added_method_in_class
+package main.kotlin.a_3_defining_functions.a_3_3_added_method_in_class
 
 fun a_3_3_5_PropertyExtension (){
     println("last char property - ${"test".lastChar}")

@@ -1,4 +1,4 @@
-package a_2_basics_kotlin.a_2_4_while_for
+package main.kotlin.a_2_basics_kotlin.a_2_4_while_for
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package a_3_defining_functions.a_3_5_work_with_regular_expression.a_3_5_1_string_divider
+package main.kotlin.a_3_defining_functions.a_3_5_work_with_regular_expression
 
 //89
 fun a_3_5_1_StringDivider(){

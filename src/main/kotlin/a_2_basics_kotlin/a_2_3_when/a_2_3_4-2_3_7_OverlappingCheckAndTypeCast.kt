@@ -1,4 +1,4 @@
-package a_2_basics_kotlin.a_2_3_when
+package main.kotlin.a_2_basics_kotlin.a_2_3_when
 
 fun a_2_3_4__2_3_7_OverlappingCheckAndTypeCast() {
     println(
@@ -11,7 +11,7 @@ fun a_2_3_4__2_3_7_OverlappingCheckAndTypeCast() {
 
 interface Expr
 
-class Num(val value: Int):Expr
+class Num(val value: Int): Expr
 
 class Sum(val left: Expr, val right: Expr): Expr
 

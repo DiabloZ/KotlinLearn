@@ -1,5 +1,5 @@
-package a_2_basics_kotlin.a_2_3_when
-import a_2_basics_kotlin.a_2_3_when.Color.*
+package main.kotlin.a_2_basics_kotlin.a_2_3_when
+import main.kotlin.a_2_basics_kotlin.a_2_3_when.Color.*
 
 enum class Color(private val r: Int, private val g: Int, private val b: Int) {
     RED(255, 0, 0),

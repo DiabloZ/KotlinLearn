@@ -1,4 +1,4 @@
-package a_2_basics_kotlin
+package main.kotlin.a_2_basics_kotlin
 
 import kotlin.random.Random
 

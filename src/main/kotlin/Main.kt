@@ -1,7 +1,6 @@
-import a_3_defining_functions.a_3_5_work_with_regular_expression.a_3_5_1_string_divider.a_3_5_1_StringDivider
-import a_3_defining_functions.a_3_5_work_with_regular_expression.a_3_5_2_RegularExpressionsAndStringsInTriplyQuotes
-import a_3_defining_functions.a_3_5_work_with_regular_expression.a_3_5_3_MultiLineLiteralsInTripleQuotes
-import a_3_defining_functions.a_3_6_clean_up_code__local_functions_and_extensions.a_3_6_Base
+package main.kotlin
+
+import main.kotlin.a_3_defining_functions.a_3_6_clean_up_code__local_functions_and_extensions.a_3_6_Base
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()

@@ -1,4 +1,4 @@
-package a_2_basics_kotlin.a_2_5_exeption_in_kotlin
+package main.kotlin.a_2_basics_kotlin.a_2_5_exeption_in_kotlin
 
 import java.io.BufferedReader
 import java.io.StringReader
