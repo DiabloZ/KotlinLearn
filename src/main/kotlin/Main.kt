@@ -1,6 +1,7 @@
 package main.kotlin
 
 import main.kotlin.a_3_defining_functions.a_3_6_clean_up_code__local_functions_and_extensions.a_3_6_Base
+import main.kotlin.a_4_create_class_hierarchy.a_4_1_1_interfaces_in_kotlin
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -15,9 +16,10 @@ fun main (args: Array<String>){
     a_3_3_2_LaunchExtensionFromJava.launch()
     a_3_3_5_PropertyExtension()
     a_3_4_2_UnpackCollectionsFromArray()
-    a_3_4_3_IndexesCall()*/
-    //a_3_5_1_StringDivider()
-    //a_3_5_2_RegularExpressionsAndStringsInTriplyQuotes()
-    //a_3_5_3_MultiLineLiteralsInTripleQuotes()
+    a_3_4_3_IndexesCall()
+    a_3_5_1_StringDivider()
+    a_3_5_2_RegularExpressionsAndStringsInTriplyQuotes()
+    a_3_5_3_MultiLineLiteralsInTripleQuotes()
     a_3_6_Base()
+    a_4_1_1_interfaces_in_kotlin()*/
 }
