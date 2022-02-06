@@ -4,8 +4,6 @@ import main.kotlin.a_2_basics_kotlin.a_2_5_exeption_in_kotlin.catchException
 import java.lang.IllegalArgumentException
 
 fun a_3_6_Base() {
-    runCatching { saveUserFinal(User(2, null, null)) }
-        .onFailure { System.err.println(it) }
 
     catchException {
         saveUser(User(1, "null", "null"))
@@ -16,6 +14,8 @@ fun a_3_6_Base() {
     catchException {
         saveUserAdvanced(User(1, "null", "null"))
     }
+    runCatching { saveUserFinal(User(2, null, null)) }
+        .onFailure { System.err.println(it) }
     catchException {
         saveUserAdvanced(User(1, null, null))
     }

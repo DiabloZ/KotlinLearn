@@ -1,6 +1,4 @@
-package a_3_defining_functions.a_3_3_added_method_in_class;
-
-import main.kotlin.a_3_defining_functions.a_3_3_added_method_in_class.A_3_3_1_importAndFunctionExtensionsKt;
+package main.kotlin.a_3_defining_functions.a_3_3_added_method_in_class;
 
 public class a_3_3_2_LaunchExtensionFromJava {
     public static void launch(){

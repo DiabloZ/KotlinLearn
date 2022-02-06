@@ -59,7 +59,7 @@ fun catchException(function : () -> Any) =
     try {
         function()
     } catch (e: Exception){
-        e.printStackTrace()
+        System.err.println(e)
     } finally {
         println("catch completed")
     }
