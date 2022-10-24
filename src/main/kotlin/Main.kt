@@ -1,8 +1,5 @@
 package main.kotlin
 
-import main.kotlin.a_3_defining_functions.a_3_6_clean_up_code__local_functions_and_extensions.a_3_6_Base
-import main.kotlin.a_4_create_class_hierarchy.a_4_1_1_interfaces_in_kotlin
-
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
     a_2_1_2_FunVariableInClass()
