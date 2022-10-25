@@ -1,8 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.AddTwoNumbers2
-import main.leetcode.beginer.LongestSubstringWithoutRepeatingCharacters3
-import main.leetcode.beginer.TwoSum1
+import main.leetcode.beginer.PalindromeNumber9
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -26,6 +24,7 @@ fun main (args: Array<String>){
 
     //TwoSum1().calculate(intArrayOf(2,7,11,15), 9)
     //AddTwoNumbers2().addTwoNumbers(null, null)
-    LongestSubstringWithoutRepeatingCharacters3().lengthOfLongestSubstring()
+    //LongestSubstringWithoutRepeatingCharacters3().lengthOfLongestSubstring()
+    PalindromeNumber9().isPalindrome()
     //RomanToInteger13().calculate("MCMXCIV")
 }
