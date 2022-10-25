@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.PalindromeNumber9
+import main.leetcode.beginer.LongestCommonPrefix14
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -25,6 +25,7 @@ fun main (args: Array<String>){
     //TwoSum1().calculate(intArrayOf(2,7,11,15), 9)
     //AddTwoNumbers2().addTwoNumbers(null, null)
     //LongestSubstringWithoutRepeatingCharacters3().lengthOfLongestSubstring()
-    PalindromeNumber9().isPalindrome()
+    //PalindromeNumber9().isPalindrome()
     //RomanToInteger13().calculate("MCMXCIV")
+    LongestCommonPrefix14().longestCommonPrefix()
 }
