@@ -75,16 +75,18 @@ fun List<ListNode>.createList(): ListNode {
 
 class AddTwoNumbers2 {
 
-    fun addTwoNumbers(l1: ListNode? = 1L.toNodesList(), l2: ListNode? = 9L.toNodesList()): ListNode? {
-        var head = ListNode(0)
-        var cur:ListNode? = head
-        var n1: ListNode? = 2L.toNodesList()
-        var n2: ListNode? = 9L.toNodesList()
+    fun addTwoNumbers(l1: ListNode? = 1L.toNodesList(), l2: ListNode? = 9L.toNodesList()): ListNode? = calculate(2L.toNodesList(), 9L.toNodesList())
+
+    private fun calculate(l1: ListNode?, l2: ListNode?): ListNode?{
+        var n1: ListNode? = l1
+        var n2: ListNode? = l2
+        var head:ListNode? = null
+        var cur:ListNode? = null
         var carry = 0
         var isFirst = true
+        fun sum(firstVal: Int?, secondVal: Int?, carry: Int): Int = (firstVal ?: 0) + (secondVal ?: 0) + carry
 
         while(n1 != null || n2 != null){
-            fun sum(firstVal: Int?, secondVal: Int?, carry: Int): Int = (firstVal ?: 0) + (secondVal ?: 0) + carry
             val sum = sum(n1?.`val`, n2?.`val`, carry)
             if (isFirst){
                 isFirst = false

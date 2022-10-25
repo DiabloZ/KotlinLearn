@@ -1,6 +1,7 @@
 package main.kotlin
 
 import main.leetcode.beginer.AddTwoNumbers2
+import main.leetcode.beginer.LongestSubstringWithoutRepeatingCharacters3
 import main.leetcode.beginer.TwoSum1
 
 fun main (args: Array<String>){
@@ -24,6 +25,7 @@ fun main (args: Array<String>){
     a_4_1_1_interfaces_in_kotlin()*/
 
     //TwoSum1().calculate(intArrayOf(2,7,11,15), 9)
-    AddTwoNumbers2().addTwoNumbers(null, null)
+    //AddTwoNumbers2().addTwoNumbers(null, null)
+    LongestSubstringWithoutRepeatingCharacters3().lengthOfLongestSubstring()
     //RomanToInteger13().calculate("MCMXCIV")
 }
