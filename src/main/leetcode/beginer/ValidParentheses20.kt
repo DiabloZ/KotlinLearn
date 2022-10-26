@@ -5,23 +5,27 @@ class ValidParentheses20 {
     //private val defaultParentheses = "()[]{}"
     private val defaultParenthesesMeme = "(([]){})"
     //private val defaultParenthesesMemea = "(([]]{})"
-    private val validePair = listOf("()", "[]", "{}")
+    //private val validePair = listOf("()", "[]", "{}")
     //private val valideReversePair = listOf(")(", "][", "}{")
 
     fun isValid(s: String = defaultParenthesesMeme): Boolean {
         if (s.length % 2 != 0) return false
+        val case1 = "()"
+        val case2 = "[]"
+        val case3 = "{}"
+        val voidString = ""
+
         var stringForHandle = s
-        var resultAfterHandle = ""
-        while (stringForHandle.isNotBlank()){
-            when{
-                stringForHandle.contains(validePair[0]) -> stringForHandle = stringForHandle.replace(validePair[0], "")
-                stringForHandle.contains(validePair[1]) -> stringForHandle = stringForHandle.replace(validePair[1], "")
-                stringForHandle.contains(validePair[2]) -> stringForHandle = stringForHandle.replace(validePair[2], "")
-            }
-            if (resultAfterHandle == stringForHandle && stringForHandle.isNotBlank()) return false
-            if (resultAfterHandle != stringForHandle) resultAfterHandle = stringForHandle
+        var resultAfterHandle = 0
+        while (resultAfterHandle != stringForHandle.length){
+            resultAfterHandle = stringForHandle.length
+            stringForHandle = stringForHandle
+                .replace(case1, voidString)
+                .replace(case2, voidString)
+                .replace(case3, voidString)
+
         }
-        return true
+        return stringForHandle.isEmpty()
     }
 
 
