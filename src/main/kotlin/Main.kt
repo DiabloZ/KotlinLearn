@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.LongestCommonPrefix14
+import main.leetcode.beginer.ValidParentheses20
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -27,5 +27,6 @@ fun main (args: Array<String>){
     //LongestSubstringWithoutRepeatingCharacters3().lengthOfLongestSubstring()
     //PalindromeNumber9().isPalindrome()
     //RomanToInteger13().calculate("MCMXCIV")
-    LongestCommonPrefix14().longestCommonPrefix()
+    //LongestCommonPrefix14().longestCommonPrefix()
+    println( ValidParentheses20().isValid())
 }
