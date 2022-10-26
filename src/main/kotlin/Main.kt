@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.ValidParentheses20
+import main.leetcode.beginer.MergeTwoSortedLists21
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -28,5 +28,6 @@ fun main (args: Array<String>){
     //PalindromeNumber9().isPalindrome()
     //RomanToInteger13().calculate("MCMXCIV")
     //LongestCommonPrefix14().longestCommonPrefix()
-    println( ValidParentheses20().isValid())
+    //println( ValidParentheses20().isValid())
+    MergeTwoSortedLists21().mergeTwoLists()
 }

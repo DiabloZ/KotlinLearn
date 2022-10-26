@@ -1,7 +1,7 @@
 package main.leetcode.beginer
 
 
-class ListNode(var `val`: Int) {
+data class ListNode(var `val`: Int) {
      var next: ListNode? = null
 }
 
