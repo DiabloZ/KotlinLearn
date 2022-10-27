@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.RemoveDuplicatesFromSortedArray26
+import main.leetcode.beginer.RemoveElement27
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -30,5 +30,6 @@ fun main (args: Array<String>){
     //LongestCommonPrefix14().longestCommonPrefix()
     //println( ValidParentheses20().isValid())
     //MergeTwoSortedLists21().mergeTwoLists()
-    RemoveDuplicatesFromSortedArray26().removeDuplicates()
+    //RemoveDuplicatesFromSortedArray26().removeDuplicates()
+    RemoveElement27().removeElement()
 }
