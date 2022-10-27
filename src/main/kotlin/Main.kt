@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.MergeTwoSortedLists21
+import main.leetcode.beginer.RemoveDuplicatesFromSortedArray26
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -29,5 +29,6 @@ fun main (args: Array<String>){
     //RomanToInteger13().calculate("MCMXCIV")
     //LongestCommonPrefix14().longestCommonPrefix()
     //println( ValidParentheses20().isValid())
-    MergeTwoSortedLists21().mergeTwoLists()
+    //MergeTwoSortedLists21().mergeTwoLists()
+    RemoveDuplicatesFromSortedArray26().removeDuplicates()
 }
