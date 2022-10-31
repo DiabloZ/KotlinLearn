@@ -1,5 +1,6 @@
 package main.kotlin
 
+import main.leetcode.beginer.LengthOfLastWord
 import main.leetcode.beginer.SearchInsertPosition35
 
 fun main (args: Array<String>){
@@ -32,10 +33,11 @@ fun main (args: Array<String>){
     //MergeTwoSortedLists21().mergeTwoLists()
     //RemoveDuplicatesFromSortedArray26().removeDuplicates()
     //RemoveElement27().removeElement()
+    //SearchInsertPosition35.searchInsert(intArrayOf(1,5,7), 4)
     arrayForCheck.forEach { value ->
         println(
-            SearchInsertPosition35.searchInsert(intArrayOf(1,3,5,6),value)
+            LengthOfLastWord.lengthOfLastWord(value)
         )
     }
 }
-val arrayForCheck = listOf(-30,0,1,5,2,7)
+val arrayForCheck = listOf("Hello World", "   fly me   to   the moon  ", "luffy is still joyboy")
