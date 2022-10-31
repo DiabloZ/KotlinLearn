@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.RemoveElement27
+import main.leetcode.beginer.SearchInsertPosition35
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -31,5 +31,11 @@ fun main (args: Array<String>){
     //println( ValidParentheses20().isValid())
     //MergeTwoSortedLists21().mergeTwoLists()
     //RemoveDuplicatesFromSortedArray26().removeDuplicates()
-    RemoveElement27().removeElement()
+    //RemoveElement27().removeElement()
+    arrayForCheck.forEach { value ->
+        println(
+            SearchInsertPosition35.searchInsert(intArrayOf(1,3,5,6),value)
+        )
+    }
 }
+val arrayForCheck = listOf(-30,0,1,5,2,7)
