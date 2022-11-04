@@ -1,8 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.LengthOfLastWord
-import main.leetcode.beginer.PlusOne66
-import main.leetcode.beginer.SearchInsertPosition35
+import main.leetcode.beginer.AddBinary67
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -36,11 +34,11 @@ fun main (args: Array<String>){
     //RemoveElement27().removeElement()
     //SearchInsertPosition35.searchInsert(intArrayOf(1,5,7), 4)
     //LengthOfLastWord.lengthOfLastWord("Hello World")
-
+    //PlusOne66.plusOne(intArrayOf(4,3,2,1)).toList().toString()
     arrayForCheck.forEach { value ->
         println(
-            PlusOne66.plusOne(value).toList().toString()
+            AddBinary67.addBinary(value.first, value.second)
         )
     }
 }
-val arrayForCheck = listOf(intArrayOf(1,2,3), intArrayOf(4,3,2,1), intArrayOf(9))
+val arrayForCheck = listOf(Pair("11", "1"), Pair("1010", "1011"), Pair("1010", "10111"), Pair("100", "110010"))
