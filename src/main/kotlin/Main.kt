@@ -1,6 +1,7 @@
 package main.kotlin
 
 import main.leetcode.beginer.AddBinary67
+import main.leetcode.beginer.SqrtX69
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -35,10 +36,11 @@ fun main (args: Array<String>){
     //SearchInsertPosition35.searchInsert(intArrayOf(1,5,7), 4)
     //LengthOfLastWord.lengthOfLastWord("Hello World")
     //PlusOne66.plusOne(intArrayOf(4,3,2,1)).toList().toString()
+    //AddBinary67.addBinary("100", "110010")
     arrayForCheck.forEach { value ->
         println(
-            AddBinary67.addBinary(value.first, value.second)
+            SqrtX69.mySqrt(value)
         )
     }
 }
-val arrayForCheck = listOf(Pair("11", "1"), Pair("1010", "1011"), Pair("1010", "10111"), Pair("100", "110010"))
+val arrayForCheck = listOf(8)
