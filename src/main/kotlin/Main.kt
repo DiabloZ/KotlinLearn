@@ -1,8 +1,6 @@
 package main.kotlin
 
-import main.leetcode.beginer.AddBinary67
-import main.leetcode.beginer.ClimbingStairs70
-import main.leetcode.beginer.SqrtX69
+import main.leetcode.beginer.*
 
 fun main (args: Array<String>){
     /*a_1_1_ElvisNull()
@@ -41,8 +39,8 @@ fun main (args: Array<String>){
     //SqrtX69.mySqrt(8)
     arrayForCheck.forEach { value ->
         println(
-            ClimbingStairs70.climbStairs(value)
+            RemoveDuplicatesFromSortedList83.deleteDuplicates(value)?.reverseValue()
         )
     }
 }
-val arrayForCheck = listOf(2)
+val arrayForCheck = listOf(112L.toNodesList(), 11233L.toNodesList(), 111L.toNodesList())

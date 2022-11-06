@@ -5,7 +5,7 @@ data class ListNode(var `val`: Int) {
      var next: ListNode? = null
 }
 
-/*
+
 fun ListNode.reverseValue(): Long? {
     val mutaListOfLong = mutableListOf<String>()
     getValueFromNode(mutaListOfLong::add)
@@ -18,7 +18,7 @@ fun ListNode.getValueFromNode(valueListener: (value: String) -> Unit) {
     next?.getValueFromNode(valueListener)
     valueListener(`val`.toString())
 }
-
+/*
 fun Long.toNodesList(): ListNode{
     val charArray = this.toString().reversed().toCharArray()
     val mapNodes = charArray.map { char ->
