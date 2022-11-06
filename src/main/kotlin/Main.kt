@@ -1,6 +1,7 @@
 package main.kotlin
 
 import main.leetcode.beginer.AddBinary67
+import main.leetcode.beginer.ClimbingStairs70
 import main.leetcode.beginer.SqrtX69
 
 fun main (args: Array<String>){
@@ -37,10 +38,11 @@ fun main (args: Array<String>){
     //LengthOfLastWord.lengthOfLastWord("Hello World")
     //PlusOne66.plusOne(intArrayOf(4,3,2,1)).toList().toString()
     //AddBinary67.addBinary("100", "110010")
+    //SqrtX69.mySqrt(8)
     arrayForCheck.forEach { value ->
         println(
-            SqrtX69.mySqrt(value)
+            ClimbingStairs70.climbStairs(value)
         )
     }
 }
-val arrayForCheck = listOf(8)
+val arrayForCheck = listOf(2)
