@@ -1,8 +1,10 @@
 package main.kotlin
 
-import main.leetcode.beginer.*
+import main.kotlin.my_study.coroutines.CoroutinesSandBox
+import leetcode.beginer.arrayForCheckMergeSortedArray88
 
-fun main (args: Array<String>){
+suspend fun main (args: Array<String>) {
+    println("""////////////////start\\\\\\\\\\\\\\\\""")
     /*a_1_1_ElvisNull()
     a_2_1_2_FunVariableInClass()
     a_2_3_1__2_3_4_ExampleWhen()
@@ -38,18 +40,14 @@ fun main (args: Array<String>){
     //AddBinary67.addBinary("100", "110010")
     //SqrtX69.mySqrt(8)
     //RemoveDuplicatesFromSortedList83.deleteDuplicates(11233L.toNodesList())?.reverseValue()
-    arrayForCheck.forEach { value ->
-        println(
+    arrayForCheckMergeSortedArray88.forEach { value ->
+
+        /*println(
             MergeSortedArray88.merge(value.nums1, value.m, value.nums2, value.n)
-        )
+        )*/
     }
+
+    CoroutinesSandBox().makeSandBox()
+    println("""\\\\\\\\\\\\\\\\end////////////////""")
 }
-val arrayForCheck = listOf(
-    MSortedArray(intArrayOf(1,2,3,3,0,0,0,0), 4, intArrayOf(2,5,5,6), 4), //[1, 2, 2, 3, 3, 5, 5, 6]
-    MSortedArray(intArrayOf(1,2,3,0,0,0), 3, intArrayOf(2,5,6), 3), //[1, 2, 2, 3, 5, 6]
-    MSortedArray(intArrayOf(1), 1, intArrayOf(), 0), //[1]
-    MSortedArray(intArrayOf(0), 0, intArrayOf(1), 1), //[1]
-    MSortedArray(intArrayOf(4,5,6,0,0,0), 3, intArrayOf(1,2,3), 3), //[1,2,3,4,5,6]
-    MSortedArray(intArrayOf(-1,0,0,3,3,3,0,0,0), 6, intArrayOf(1,2,2), 3), //[-1,1,2,2,2,3,2,3,3]
-)
 

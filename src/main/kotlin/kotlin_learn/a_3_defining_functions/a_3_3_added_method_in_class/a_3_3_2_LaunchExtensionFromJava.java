@@ -1,4 +1,4 @@
-package main.kotlin.kotlin_learn.a_3_defining_functions.a_3_3_added_method_in_class;
+package kotlin_learn.a_3_defining_functions.a_3_3_added_method_in_class;
 
 public class a_3_3_2_LaunchExtensionFromJava {
     public static void launch(){
