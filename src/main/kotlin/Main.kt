@@ -1,10 +1,12 @@
 package main.kotlin
 
+import kotlinx.coroutines.coroutineScope
 import main.kotlin.my_study.coroutines.CoroutinesSandBox
 import leetcode.beginer.arrayForCheckMergeSortedArray88
+import org.apache.logging.log4j.LogManager
 
 suspend fun main (args: Array<String>) {
-    println("""////////////////start\\\\\\\\\\\\\\\\""")
+    println("""////////////////START\\\\\\\\\\\\\\\\""")
     /*a_1_1_ElvisNull()
     a_2_1_2_FunVariableInClass()
     a_2_3_1__2_3_4_ExampleWhen()
@@ -48,6 +50,7 @@ suspend fun main (args: Array<String>) {
     }
 
     CoroutinesSandBox().makeSandBox()
-    println("""\\\\\\\\\\\\\\\\end////////////////""")
+    val logger = LogManager.getLogger()
+    println("""\\\\\\\\\\\\\\\\END////////////////""")
 }
 

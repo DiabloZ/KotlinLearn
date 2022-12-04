@@ -1,2 +1,9 @@
 /out/*
+/out/**
+/out/
+/build/**
 /build/*
+/build/
+/.gradle/**
+/.gradle/*
+/.gradle/

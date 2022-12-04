@@ -15,7 +15,8 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation("com.jakewharton.timber:timber:2.2.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4")
+    implementation("org.apache.logging.log4j:log4j-api:2.19.0")
+    implementation("org.apache.logging.log4j:log4j-core:2.19.0")
 }
 
 tasks.test {
