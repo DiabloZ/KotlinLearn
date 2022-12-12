@@ -72,6 +72,7 @@ class CoroutineTimer {
     ){
         cacheMutex.withLock {
             startTime = currentTime
+            count = 0.0
             while (count < time){
                 if (!isPause) {
                     val result = (count / time * 100).toLong()
