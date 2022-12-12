@@ -1,9 +1,16 @@
 package main.kotlin
 
-import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.*
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import main.kotlin.my_study.coroutines.CoroutinesSandBox
 import leetcode.beginer.arrayForCheckMergeSortedArray88
+import main.kotlin.utils.CoroutineTimer
+import main.kotlin.utils.Logger
 import org.apache.logging.log4j.LogManager
+import java.awt.dnd.DropTarget
+import java.util.*
+import java.util.concurrent.atomic.AtomicLong
 
 suspend fun main (args: Array<String>) {
     println("""////////////////START\\\\\\\\\\\\\\\\""")
@@ -42,6 +49,16 @@ suspend fun main (args: Array<String>) {
     //AddBinary67.addBinary("100", "110010")
     //SqrtX69.mySqrt(8)
     //RemoveDuplicatesFromSortedList83.deleteDuplicates(11233L.toNodesList())?.reverseValue()
+
+    Logger.printText("","!!!!!TimerIsStarted !!!!!")
+    val timer = CoroutineTimer()
+    val time = Date().time
+    val timerTime = 100L
+    timer.createTimer(timerTime, 16, { }){
+        Logger.printText("","!!!!!TimerIsCompleted !!!!! overTime - ${Date().time - timerTime - time}")
+    }
+    timer.start()
+
     arrayForCheckMergeSortedArray88.forEach { value ->
 
         /*println(
@@ -50,7 +67,7 @@ suspend fun main (args: Array<String>) {
     }
 
     CoroutinesSandBox().makeSandBox()
-    val logger = LogManager.getLogger()
+    delay(1000)
     println("""\\\\\\\\\\\\\\\\END////////////////""")
 }
 
