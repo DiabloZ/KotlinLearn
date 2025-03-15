@@ -9,7 +9,7 @@ fun main(){
     )
 
     PhoneMaskHandler.handle (
-        oldText = oldText,
+        //oldText = oldText,
         newText = newText,
         maskModel = phoneMask
     )
