@@ -16,6 +16,7 @@ data class RouterConfig(
     val routerPassword: String,
     val interfaceName: String,
     val routerPort: Int,
+    val lastSize: Int,
     val domains: List<String>
 )
 
@@ -33,6 +34,7 @@ fun parseJson(json: String): RouterConfig {
     val routerPassword = json.substringAfter("\"routerPassword\": \"").substringBefore("\",")
     val interfaceName = json.substringAfter("\"interfaceName\": \"").substringBefore("\",")
     val routerPort = json.substringAfter("\"routerPort\": ").substringBefore(",").toInt()
+    val lastSize = json.substringAfter("\"lastSize\": ").substringBefore(",").toInt()
     val domains =
         json.substringAfter("\"domains\": [").substringBefore("]").split(",").map { it.trim().removeSurrounding("\"") }
 
@@ -42,6 +44,7 @@ fun parseJson(json: String): RouterConfig {
         routerPassword = routerPassword,
         interfaceName = interfaceName,
         routerPort = routerPort,
+        lastSize = lastSize,
         domains = domains
     )
 }
@@ -108,7 +111,11 @@ private fun addDomainsToRouter(domains: List<Domain>) {
             logWithTimeStamp("Не удалось пройти аутентификацию.")
             return
         }
-        allRoutesWithWeHave = getAllRotes(inputStream, outputStream)
+        while (allRoutesWithWeHave.size < config.lastSize) {
+            Thread.sleep(1000)
+            allRoutesWithWeHave = getAllRotes(inputStream, outputStream)
+            logWithTimeStamp("Восстановлено путей - ${allRoutesWithWeHave.size}")
+        }
         filteredRoutes(domains, allRoutesWithWeHave)
     } else {
         filteredRoutes(domains, allRoutesWithWeHave)
@@ -124,7 +131,7 @@ private fun addDomainsToRouter(domains: List<Domain>) {
     } else {
         logWithTimeStamp("Количество добавляемых адресов: ${allNewRoutes.size}", level = LOG_LEVEL.CRITICAL)
         allNewRoutes.forEach {
-            logWithTimeStamp("Добавляемые адреса:  - ${it.address}", level = LOG_LEVEL.WARN)
+            logWithTimeStamp("Добавляемые адреса:  description ${it.description}, address ${it.address}", level = LOG_LEVEL.WARN)
         }
     }
 
@@ -141,7 +148,7 @@ private fun addDomainsToRouter(domains: List<Domain>) {
                 description = newRoute.description,
                 interfaceName = interfaceName
             )
-            logWithTimeStamp("Маршрут для $newRoute успешно добавлен", level = LOG_LEVEL.TRACE)
+            //logWithTimeStamp("Маршрут для $newRoute успешно добавлен", level = LOG_LEVEL.TRACE)
         }
     } catch (e: IOException) {
         logWithTimeStamp("Ошибка Telnet: ${e.message}")
