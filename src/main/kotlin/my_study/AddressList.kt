@@ -22,16 +22,19 @@ data class RouterConfig(
 val configFile = File("router_config.json")
 val config = if (configFile.exists()) {
     parseJson(configFile.readText())
+
 } else {
     error("!!!")
 }
+
 fun parseJson(json: String): RouterConfig {
     val routerHost = json.substringAfter("\"routerHost\": \"").substringBefore("\",")
     val routerUser = json.substringAfter("\"routerUser\": \"").substringBefore("\",")
     val routerPassword = json.substringAfter("\"routerPassword\": \"").substringBefore("\",")
     val interfaceName = json.substringAfter("\"interfaceName\": \"").substringBefore("\",")
     val routerPort = json.substringAfter("\"routerPort\": ").substringBefore(",").toInt()
-    val domains = json.substringAfter("\"domains\": [").substringBefore("]").split(",").map { it.trim().removeSurrounding("\"") }
+    val domains =
+        json.substringAfter("\"domains\": [").substringBefore("]").split(",").map { it.trim().removeSurrounding("\"") }
 
     return RouterConfig(
         routerHost = routerHost,
@@ -50,13 +53,25 @@ val interfaceName = config.interfaceName
 val routerPort = config.routerPort
 val domains = config.domains
 
-fun logWithTimeStamp(message: String) {
-    println("${java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss"))} $message")
+fun logWithTimeStamp(message: String, level: LOG_LEVEL = LOG_LEVEL.INFO) {
+    println(
+        "$level "+"${
+            java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss"))
+        } $message"
+    )
 }
-
+enum class LOG_LEVEL {
+    INFO,
+    ERROR,
+    DEBUG,
+    TRACE,
+    WARN,
+    FATAL,
+    CRITICAL,
+}
 fun main() {
     while (true) {
-        logWithTimeStamp("Запускаем скрипт для добавления маршрутов в роутер}")
+        logWithTimeStamp("Запускаем скрипт для добавления маршрутов в роутер")
         val domainsResult = getIpAddressess(domains)
         addDomainsToRouter(domainsResult)
         logWithTimeStamp("Останавливаемся, ждём")
@@ -103,12 +118,14 @@ private fun addDomainsToRouter(domains: List<Domain>) {
         addAll(allNewRoutes.map { Route(it.address, "", interfaceName, "", 0) })
     }
 
-    logWithTimeStamp("!!! Количество добавляемых адресов: ${allNewRoutes.size}")
-    logWithTimeStamp("!!! Добавляемые адреса: ${allNewRoutes.joinToString(", ")}")
-
     if (allNewRoutes.isEmpty()) {
-        logWithTimeStamp("!!! Нет новых маршрутов для добавления.")
+        logWithTimeStamp("Нет новых маршрутов для добавления.")
         return
+    } else {
+        logWithTimeStamp("Количество добавляемых адресов: ${allNewRoutes.size}", level = LOG_LEVEL.CRITICAL)
+        allNewRoutes.forEach {
+            logWithTimeStamp("Добавляемые адреса:  - ${it.address}", level = LOG_LEVEL.WARN)
+        }
     }
 
     try {
@@ -124,7 +141,7 @@ private fun addDomainsToRouter(domains: List<Domain>) {
                 description = newRoute.description,
                 interfaceName = interfaceName
             )
-            logWithTimeStamp("Маршрут для $newRoute успешно добавлен")
+            logWithTimeStamp("Маршрут для $newRoute успешно добавлен", level = LOG_LEVEL.TRACE)
         }
     } catch (e: IOException) {
         logWithTimeStamp("Ошибка Telnet: ${e.message}")
@@ -180,7 +197,7 @@ fun addRouteTelnet(
     //ip route <сеть_назначения> <маска_подсети> <шлюз> [интерфейс] [auto]
     //val command = "ip route 173.194.220.138 255.255.255.255 0.0.0.0 WifiMaster0/WifiStation0 auto !123"
     val command = "ip route $destinationIp 255.255.255.255 0.0.0.0 $interfaceName auto !$description\r\n"
-    logWithTimeStamp("Отправляем команду: $command")
+    //logWithTimeStamp("Отправляем команду: $command")
     outputStream.write(command.toByteArray(StandardCharsets.UTF_8))
     outputStream.flush()
     readUntil(inputStream, "(config)>")
@@ -206,7 +223,7 @@ fun readUntil(inputStream: InputStream, pattern: String = "(config)>"): String {
     } catch (e: IOException) {
         // Обработка ошибки чтения
     }
-    logWithTimeStamp("Ответ сервера : ${resultString}}")
+    //logWithTimeStamp("Ответ сервера : ${resultString}}")
     return sb.toString()
 }
 
@@ -220,11 +237,11 @@ fun getIpAddressess(domains: List<String>): List<Domain> {
         try {
             val domainAddressList = mutableListOf<String>()
             val addresses = InetAddress.getAllByName(domain)  // Получаем массив InetAddress
-            logWithTimeStamp("IP-адреса для $domain:")
+            //logWithTimeStamp("IP-адреса для $domain:")
             addresses.forEach { addr ->
                 if (addr is Inet4Address) {
                     domainAddressList.add(addr.hostAddress)
-                    logWithTimeStamp("  ${addr.hostAddress}")
+                    //logWithTimeStamp("  ${addr.hostAddress}")
                 }
             }
             if (domainAddressList.isNotEmpty()) {
@@ -236,9 +253,9 @@ fun getIpAddressess(domains: List<String>): List<Domain> {
                 )
             }
         } catch (ex: Exception) {
-            logWithTimeStamp("Не удалось разрешить домен $domain: ${ex.message}")
+            //logWithTimeStamp("Не удалось разрешить домен $domain: ${ex.message}")
         }
-        println() // Пустая строка для разделения вывода
+        //println() // Пустая строка для разделения вывода
     }
     return domainResult
 }
